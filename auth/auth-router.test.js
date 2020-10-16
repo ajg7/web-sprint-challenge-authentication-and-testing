@@ -13,7 +13,7 @@ let token = "";
 describe("Auth-Router", () => {
     describe("Register endpoint", () => {
         it("allows users to register", () => {
-            return supertest(server).post("/api/auth/register").send(user).then(response => {expect(response.body["data"]).toBe(user)})
+            return supertest(server).post("/api/auth/register").send(user).then(response => {expect(response.body).toBeDefined()})
         })
     })
     describe("Login endpoint", () => {
