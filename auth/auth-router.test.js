@@ -4,7 +4,7 @@ const server = require("../api/server");
 
 
 const user = {
-    username: "Peach3",
+    username: "Peach2",
     password: "i<3Mario"
 }
 
@@ -13,7 +13,7 @@ let token = "";
 describe("Auth-Router", () => {
     describe("Register endpoint", () => {
         it("allows users to register", () => {
-            return supertest(server).post("/api/auth/register").send(user).then(response => {expect(response.body)})
+            return supertest(server).post("/api/auth/register").send(user).then(response => {expect(response.body["data"]).toBe(user)})
         })
     })
     describe("Login endpoint", () => {
